@@ -3,6 +3,11 @@
 ## Objective
 Use Natural Language Processing (NLP) techniques to integrate unstructured data (e.g., emails, customer reviews) with structured event logs to enhance process analysis and decision-making.
 
+# Notes
+Data found: from Process mining Website https://www.processmining.org/event-data.html 
+1. Customer purchase order handling process
+XES and CSV: https://data.4tu.nl/articles/_/12715853/1 
+
 ## Expanded Focus Areas
 1. Text Mining: Techniques to extract meaningful patterns and knowledge from unstructured text.
 2. Sentiment Analysis: Assessing the sentiments expressed in text data to gain insights into customer satisfaction and employee feedback.
