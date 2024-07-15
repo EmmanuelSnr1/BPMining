@@ -21,6 +21,7 @@ XES and CSV: https://data.4tu.nl/articles/_/12715853/1
 2. NLP Techniques:
    - What are the best NLP techniques to extract meaningful information from textual data in the context of process mining?
    - How can sentiment analysis improve the understanding of customer and employee experiences?
+   - NLP
 
 3. Impact on Process Mining:
    - How can integrated data improve process discovery, conformance checking, and enhancement?
