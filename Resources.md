@@ -308,8 +308,51 @@ To effectively interact with the entities in your application, you'll need to cr
 
 5. **Delete a performance issue**
    - **Endpoint**: `DELETE /api/performanceissues/{id}`
-   - **Description**: Deletes a specific performance issue by its ID.
+   - **Description**: Deletes a specific performance issue by its ID
+
+
+#### FileMetadata Entity
+
+##### Purpose
+The `FileMetadata` entity stores metadata about the files uploaded to the system. This includes the file's name, path, size, and upload timestamp.
+
+##### Use Cases
+- Tracking uploaded files and their storage locations.
+- Retrieving file metadata for preprocessing and analysis.
+- Managing file-related operations, such as deletions or updates.
+
+##### Data Stored
+- `id`: A unique identifier for the file metadata.
+- `filename`: The name of the uploaded file.
+- `filepath`: The path where the file is stored.
+- `filesize`: The size of the file in bytes.
+- `uploadTimestamp`: The timestamp when the file was uploaded.
+
+##### Relevance
+The `FileMetadata` entity is essential for managing large file uploads efficiently. It decouples file storage from the database, ensuring that the database handles only metadata while the actual files are stored in a suitable storage system.
+
+#### PreprocessedData Entity
+
+##### Purpose
+The `PreprocessedData` entity stores information about the data that has been preprocessed from the uploaded files. This includes references to the original file and the associated process, as well as the preprocessed data itself.
+
+##### Use Cases
+- Storing results of data preprocessing for further analysis.
+- Linking preprocessed data to specific processes and files.
+- Retrieving preprocessed data for process mining and analysis tasks.
+
+##### Data Stored
+- `id`: A unique identifier for the preprocessed data.
+- `fileId`: The identifier of the file from which this data was preprocessed.
+- `processId`: The identifier of the process associated with this data.
+- `data`: The preprocessed data, stored as JSON or text.
+- `createdAt`: The timestamp when the data was created.
+
+##### Relevance
+The `PreprocessedData` entity plays a crucial role in managing the results of data preprocessing tasks. It ensures that the processed data is stored in a structured manner, linked to the original files and processes, facilitating efficient data retrieval and analysis.
+
 
 ### Summary
 
 These endpoints provide a comprehensive set of operations to manage users, processes, event logs, NLP queries, bottlenecks, decision paths, and performance issues. They enable full CRUD operations and allow for the essential functionalities needed to support the application's objectives in process mining and business process optimization.
+These additional entities (`FileMetadata` and `PreprocessedData`) and their corresponding tables help manage the large file uploads and the resulting preprocessed data efficiently. By storing metadata and preprocessed data separately from the actual files, the system can handle large datasets without overwhelming the database, ensuring scalability and performance.
