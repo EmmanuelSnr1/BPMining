@@ -137,3 +137,179 @@ The `PerformanceIssues` entity is crucial for tracking and resolving issues that
 ### Summary
 
 Each entity in the database serves a specific role in supporting the functionality and objectives of the application. Together, they enable comprehensive process mining, natural language querying, and business process optimization. The data stored in these entities provide the foundation for detailed analysis, insights, and decision-making within the system.
+
+# API Doc
+To effectively interact with the entities in your application, you'll need to create a set of RESTful API endpoints. These endpoints will allow clients (like your frontend built with Vue.js) to perform CRUD (Create, Read, Update, Delete) operations and some additional actions specific to your application's needs. Below are the suggested API endpoints for each entity:
+
+### Users API Endpoints
+
+1. **Create a new user**
+   - **Endpoint**: `POST /api/users`
+   - **Description**: Registers a new user.
+   - **Request Body**: `{ "email": "user@example.com", "fullName": "User Name", "password": "password123" }`
+
+2. **Get a user by ID**
+   - **Endpoint**: `GET /api/users/{id}`
+   - **Description**: Retrieves a user's details by their ID.
+
+3. **Update a user's information**
+   - **Endpoint**: `PUT /api/users/{id}`
+   - **Description**: Updates a user's details.
+   - **Request Body**: `{ "email": "newemail@example.com", "fullName": "New Name", "password": "newpassword123" }`
+
+4. **Delete a user**
+   - **Endpoint**: `DELETE /api/users/{id}`
+   - **Description**: Deletes a user by their ID.
+
+5. **Authenticate user (Login)**
+   - **Endpoint**: `POST /api/users/login`
+   - **Description**: Authenticates a user and generates a token.
+   - **Request Body**: `{ "email": "user@example.com", "password": "password123" }`
+
+### Processes API Endpoints
+
+1. **Create a new process**
+   - **Endpoint**: `POST /api/processes`
+   - **Description**: Adds a new business process.
+   - **Request Body**: `{ "name": "Process Name", "description": "Process Description" }`
+
+2. **Get all processes**
+   - **Endpoint**: `GET /api/processes`
+   - **Description**: Retrieves a list of all processes.
+
+3. **Get a process by ID**
+   - **Endpoint**: `GET /api/processes/{id}`
+   - **Description**: Retrieves details of a specific process by its ID.
+
+4. **Update a process**
+   - **Endpoint**: `PUT /api/processes/{id}`
+   - **Description**: Updates a specific process.
+   - **Request Body**: `{ "name": "Updated Process Name", "description": "Updated Description" }`
+
+5. **Delete a process**
+   - **Endpoint**: `DELETE /api/processes/{id}`
+   - **Description**: Deletes a specific process by its ID.
+
+### EventLogs API Endpoints
+
+1. **Create a new event log**
+   - **Endpoint**: `POST /api/eventlogs`
+   - **Description**: Adds a new event log entry.
+   - **Request Body**: `{ "processId": 1, "eventName": "Event Name", "eventTimestamp": "2024-08-03T10:00:00Z", "resource": "Resource Name", "eventData": "Additional data in JSON or text" }`
+
+2. **Get all event logs for a process**
+   - **Endpoint**: `GET /api/eventlogs?processId={processId}`
+   - **Description**: Retrieves all event logs for a specific process.
+
+3. **Get an event log by ID**
+   - **Endpoint**: `GET /api/eventlogs/{id}`
+   - **Description**: Retrieves details of a specific event log by its ID.
+
+4. **Update an event log**
+   - **Endpoint**: `PUT /api/eventlogs/{id}`
+   - **Description**: Updates a specific event log.
+   - **Request Body**: `{ "eventName": "Updated Event Name", "eventTimestamp": "2024-08-04T10:00:00Z", "resource": "Updated Resource", "eventData": "Updated additional data" }`
+
+5. **Delete an event log**
+   - **Endpoint**: `DELETE /api/eventlogs/{id}`
+   - **Description**: Deletes a specific event log by its ID.
+
+### NLPQueries API Endpoints
+
+1. **Create a new NLP query**
+   - **Endpoint**: `POST /api/nlpqueries`
+   - **Description**: Submits a new NLP query.
+   - **Request Body**: `{ "userId": 1, "queryText": "What are the bottlenecks in process X?" }`
+
+2. **Get all NLP queries for a user**
+   - **Endpoint**: `GET /api/nlpqueries?userId={userId}`
+   - **Description**: Retrieves all NLP queries made by a specific user.
+
+3. **Get an NLP query by ID**
+   - **Endpoint**: `GET /api/nlpqueries/{id}`
+   - **Description**: Retrieves details of a specific NLP query by its ID.
+
+4. **Update an NLP query result**
+   - **Endpoint**: `PUT /api/nlpqueries/{id}`
+   - **Description**: Updates the result of a specific NLP query.
+   - **Request Body**: `{ "queryResult": "Updated result in JSON or text" }`
+
+5. **Delete an NLP query**
+   - **Endpoint**: `DELETE /api/nlpqueries/{id}`
+   - **Description**: Deletes a specific NLP query by its ID.
+
+### ProcessBottlenecks API Endpoints
+
+1. **Create a new process bottleneck**
+   - **Endpoint**: `POST /api/processbottlenecks`
+   - **Description**: Records a new process bottleneck.
+   - **Request Body**: `{ "processId": 1, "description": "Description of the bottleneck" }`
+
+2. **Get all bottlenecks for a process**
+   - **Endpoint**: `GET /api/processbottlenecks?processId={processId}`
+   - **Description**: Retrieves all bottlenecks for a specific process.
+
+3. **Get a bottleneck by ID**
+   - **Endpoint**: `GET /api/processbottlenecks/{id}`
+   - **Description**: Retrieves details of a specific bottleneck by its ID.
+
+4. **Update a bottleneck**
+   - **Endpoint**: `PUT /api/processbottlenecks/{id}`
+   - **Description**: Updates a specific bottleneck.
+   - **Request Body**: `{ "description": "Updated description of the bottleneck" }`
+
+5. **Delete a bottleneck**
+   - **Endpoint**: `DELETE /api/processbottlenecks/{id}`
+   - **Description**: Deletes a specific bottleneck by its ID.
+
+### DecisionPaths API Endpoints
+
+1. **Create a new decision path**
+   - **Endpoint**: `POST /api/decisionpaths`
+   - **Description**: Records a new decision path.
+   - **Request Body**: `{ "processId": 1, "pathData": "Decision path data in JSON or text" }`
+
+2. **Get all decision paths for a process**
+   - **Endpoint**: `GET /api/decisionpaths?processId={processId}`
+   - **Description**: Retrieves all decision paths for a specific process.
+
+3. **Get a decision path by ID**
+   - **Endpoint**: `GET /api/decisionpaths/{id}`
+   - **Description**: Retrieves details of a specific decision path by its ID.
+
+4. **Update a decision path**
+   - **Endpoint**: `PUT /api/decisionpaths/{id}`
+   - **Description**: Updates a specific decision path.
+   - **Request Body**: `{ "pathData": "Updated decision path data in JSON or text" }`
+
+5. **Delete a decision path**
+   - **Endpoint**: `DELETE /api/decisionpaths/{id}`
+   - **Description**: Deletes a specific decision path by its ID.
+
+### PerformanceIssues API Endpoints
+
+1. **Create a new performance issue**
+   - **Endpoint**: `POST /api/performanceissues`
+   - **Description**: Records a new performance issue.
+   - **Request Body**: `{ "processId": 1, "issueDescription": "Description of the performance issue" }`
+
+2. **Get all performance issues for a process**
+   - **Endpoint**: `GET /api/performanceissues?processId={processId}`
+   - **Description**: Retrieves all performance issues for a specific process.
+
+3. **Get a performance issue by ID**
+   - **Endpoint**: `GET /api/performanceissues/{id}`
+   - **Description**: Retrieves details of a specific performance issue by its ID.
+
+4. **Update a performance issue**
+   - **Endpoint**: `PUT /api/performanceissues/{id}`
+   - **Description**: Updates a specific performance issue.
+   - **Request Body**: `{ "issueDescription": "Updated description of the performance issue" }`
+
+5. **Delete a performance issue**
+   - **Endpoint**: `DELETE /api/performanceissues/{id}`
+   - **Description**: Deletes a specific performance issue by its ID.
+
+### Summary
+
+These endpoints provide a comprehensive set of operations to manage users, processes, event logs, NLP queries, bottlenecks, decision paths, and performance issues. They enable full CRUD operations and allow for the essential functionalities needed to support the application's objectives in process mining and business process optimization.
