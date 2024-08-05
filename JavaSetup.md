@@ -1,7 +1,6 @@
 # Java Setup: 
 Here are the commands to install each JAR file to your local Maven repository. Assuming you are already in the `lib` directory:
 
-
 ### Update Your POM File
 
 After installing the JAR files locally, include them in your `pom.xml` as dependencies:
