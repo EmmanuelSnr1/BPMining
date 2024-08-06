@@ -4,6 +4,13 @@ Here are the commands to install each JAR file to your local Maven repository. A
 ### Update Your POM File
 
 After installing the JAR files locally, include them in your `pom.xml` as dependencies:
+## Sifting through jar files 
+```
+for jar in *.jar; do
+    echo "Checking $jar"
+    jar tf $jar | grep ProMWizard && echo "Found in $jar"
+done
+```
 
 
 To cover all aspects of process mining, including event log reading, process discovery, conformance checking, performance analysis, and process enhancement, you'll need a comprehensive set of libraries. Below, I've identified the necessary packages from your list to include in your project. 
