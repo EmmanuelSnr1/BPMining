@@ -6,7 +6,9 @@ Use Natural Language Processing (NLP) techniques to integrate unstructured data 
 # Notes
 Data found: from Process mining Website https://www.processmining.org/event-data.html 
 1. Customer purchase order handling process
-XES and CSV: https://data.4tu.nl/articles/_/12715853/1 
+XES and CSV: https://data.4tu.nl/articles/_/12715853/1
+Resources on Internet and Web application Configurations
+https://www.youtube.com/watch?v=FBkZ2TJZZUY&t=3s
 
 ## Expanded Focus Areas
 1. Text Mining: Techniques to extract meaningful patterns and knowledge from unstructured text.
