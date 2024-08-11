@@ -10,6 +10,12 @@ XES and CSV: https://data.4tu.nl/articles/_/12715853/1
 Resources on Internet and Web application Configurations
 https://www.youtube.com/watch?v=FBkZ2TJZZUY&t=3s
 
+![image](https://github.com/user-attachments/assets/65194d00-433b-4c22-9a01-7215ca317ae4)
+Advantages of Process Mining for organisations 
+https://lingarogroup.com/blog/process-mining-models-and-how-to-use-them-in-your-business#:~:text=six%20steps%20of%20a%20proper,and%20process%20improvement%20and%20support. 
+
+
+
 ## Expanded Focus Areas
 1. Text Mining: Techniques to extract meaningful patterns and knowledge from unstructured text.
 2. Sentiment Analysis: Assessing the sentiments expressed in text data to gain insights into customer satisfaction and employee feedback.
