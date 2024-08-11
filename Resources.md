@@ -356,3 +356,59 @@ The `PreprocessedData` entity plays a crucial role in managing the results of da
 
 These endpoints provide a comprehensive set of operations to manage users, processes, event logs, NLP queries, bottlenecks, decision paths, and performance issues. They enable full CRUD operations and allow for the essential functionalities needed to support the application's objectives in process mining and business process optimization.
 These additional entities (`FileMetadata` and `PreprocessedData`) and their corresponding tables help manage the large file uploads and the resulting preprocessed data efficiently. By storing metadata and preprocessed data separately from the actual files, the system can handle large datasets without overwhelming the database, ensuring scalability and performance.
+
+
+# Performance Analysis 
+In process mining, several types of performance analysis are carried out to understand and optimize business processes. Here are some of the key performance analysis types:
+
+1. **Case Duration Analysis**:
+   - This involves measuring the time taken from the start to the end of a case. It helps identify cases that take longer than expected and understand the overall process efficiency.
+   - Tools and techniques: Case duration calculation, lead time analysis.
+
+2. **Activity Duration Analysis**:
+   - This focuses on the time taken to complete individual activities within the process. It helps identify bottlenecks and activities that slow down the process.
+   - Tools and techniques: Activity performance analysis, activity duration metrics.
+
+3. **Waiting Time Analysis**:
+   - Measures the idle or waiting times between activities. This analysis helps identify delays and waiting times that could be reduced or eliminated.
+   - Tools and techniques: Queueing theory, waiting time analysis.
+
+4. **Throughput Time Analysis**:
+   - Examines the total time taken for cases to pass through the entire process. This analysis is crucial for understanding overall process efficiency and identifying opportunities for improvement.
+   - Tools and techniques: End-to-end process timing, throughput analysis.
+
+5. **Resource Utilization Analysis**:
+   - Assesses how resources (e.g., employees, machines) are utilized throughout the process. It helps identify underutilized or overburdened resources.
+   - Tools and techniques: Resource allocation analysis, workload distribution.
+
+6. **Bottleneck Analysis**:
+   - Identifies stages in the process where delays or congestion occur, which slow down the entire process. Bottleneck analysis is essential for improving process flow.
+   - Tools and techniques: Bottleneck detection algorithms, flow analysis.
+
+7. **Cycle Time Analysis**:
+   - Measures the time taken to complete a single cycle of the process. It is important for processes that are repetitive and need optimization for each cycle.
+   - Tools and techniques: Cycle time metrics, process iteration analysis.
+
+8. **Service Time Analysis**:
+   - Evaluates the time taken to provide a service to a customer or complete a specific service-related activity within the process.
+   - Tools and techniques: Service performance metrics, customer service analysis.
+
+9. **Conformance Checking**:
+   - Compares the actual process execution with the predefined process model to identify deviations. It helps ensure that the process adheres to standards and regulations.
+   - Tools and techniques: Conformance checking tools, deviation analysis.
+
+10. **Cost Analysis**:
+    - Involves calculating the costs associated with different activities and resources in the process. It helps identify cost-saving opportunities.
+    - Tools and techniques: Cost accounting, cost performance analysis.
+
+11. **Frequency Analysis**:
+    - Examines how often activities or paths are taken in the process. It helps understand the most common and least common paths.
+    - Tools and techniques: Frequency charts, path analysis.
+
+These types of performance analyses help organizations gain insights into their processes, identify areas for improvement, and optimize overall process performance.
+
+### References:
+- van der Aalst, W. M. P. (2016). *Process Mining: Data Science in Action*. Springer.
+- van der Aalst, W. M. P., Adriansyah, A., & van Dongen, B. F. (2012). "Replaying History on Process Models for Conformance Checking and Performance Analysis." *Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery*.
+- "Performance Analysis in Process Mining." [PM4Py Documentation](https://pm4py.fit.fraunhofer.de/documentation).
+- 
