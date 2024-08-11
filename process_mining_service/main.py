@@ -8,7 +8,7 @@ app.register_blueprint(process_discovery_bp, url_prefix='/api/process_discovery'
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'PROCESS MINING SERVER IS RUNNING'
 
 
 if __name__ == '__main__':
