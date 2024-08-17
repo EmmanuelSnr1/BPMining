@@ -63,6 +63,7 @@ To understand how deep learning fits into the broader context of AI, let's break
 
 These concepts all interconnect within the broader field of AI, with deep learning often at the core of modern AI advancements.
 
+
 # NLP Tokenization 
 **Tokenization** is a fundamental process in natural language processing (NLP) where text is broken down into smaller units called **tokens**. These tokens are often words, but they can also be phrases, sentences, or even characters, depending on the application and the specific approach to tokenization.
 
@@ -115,6 +116,59 @@ In this example, `word_tokenize` is a function that splits the sentence into wor
 
 ### Summary:
 Tokenization is a crucial step in NLP that breaks down text into manageable units called tokens. It facilitates text analysis and processing, enabling machine learning models to work effectively with textual data.
+
+# NLP Lemmatization
+**Lemmatization** is a text normalization process in natural language processing (NLP) where words are reduced to their base or root form, known as a **lemma**. Unlike stemming, which simply removes suffixes to generate a root form (which may not always be a valid word), lemmatization takes into account the context and morphological analysis of the word to ensure that the resulting lemma is a valid word in the language.
+
+### Key Points about Lemmatization:
+
+1. **Lemmas vs. Stems**:
+   - **Lemma**: The base form of a word that has meaning in the dictionary. For example, the lemma of "running" is "run", and the lemma of "better" (comparative form) is "good".
+   - **Stem**: A root form of the word that might not be a valid word in the dictionary. For example, the stem of "running" might be "runn" when using a stemmer.
+
+2. **Context-Awareness**:
+   - Lemmatization considers the part of speech (POS) and the context in which a word is used to determine its lemma. For instance, "bats" can be lemmatized to "bat" (if it's a noun) or "bat" (if it's a verb), but "better" as an adjective would be lemmatized to "good".
+
+3. **Examples**:
+   - "running" → "run"
+   - "geese" → "goose"
+   - "am", "is", "are" → "be"
+   - "better" (as in "I feel better") → "good"
+
+4. **Applications**:
+   - **Text Preprocessing**: Lemmatization is commonly used in preprocessing text data for tasks like text classification, sentiment analysis, and search engines to ensure that words with the same meaning but different forms are treated as the same.
+   - **Information Retrieval**: Search engines often use lemmatization to match different forms of a word in user queries to relevant documents.
+   - **Machine Translation**: Lemmatization helps in simplifying the text and improving the performance of translation models by reducing the number of unique words they need to handle.
+
+### Lemmatization vs. Stemming:
+- **Lemmatization** is more sophisticated than **stemming** because it reduces words to their dictionary form, considering the context and part of speech.
+- **Stemming** is a faster and simpler process that cuts off prefixes or suffixes to reduce a word to its root form, which might not always be meaningful (e.g., "fishing" might become "fish", but "running" could be reduced to "runn").
+
+### Example in Code:
+Here’s how you might perform lemmatization in Python using the **nltk** library:
+
+```python
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+lemmatizer = WordNetLemmatizer()
+
+# Examples of lemmatization
+print(lemmatizer.lemmatize("running", pos=wordnet.VERB))  # Output: run
+print(lemmatizer.lemmatize("geese", pos=wordnet.NOUN))    # Output: goose
+print(lemmatizer.lemmatize("better", pos=wordnet.ADJ))    # Output: good
+```
+
+In this example:
+- The `lemmatize` function reduces "running" to "run" by considering it as a verb.
+- "geese" is reduced to "goose" by treating it as a noun.
+- "better" is reduced to "good" when treated as an adjective.
+
+### Summary:
+Lemmatization is a process in NLP that transforms words into their base or root form, known as a lemma, ensuring that the output is a valid word in the language. It is more context-aware and accurate than stemming, making it an essential step in text preprocessing for many NLP tasks.
 
 # Types of Data We are Dealing With
 Here's a table that separates the data types into structured and unstructured categories:
