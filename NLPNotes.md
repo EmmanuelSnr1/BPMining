@@ -63,6 +63,58 @@ To understand how deep learning fits into the broader context of AI, let's break
 
 These concepts all interconnect within the broader field of AI, with deep learning often at the core of modern AI advancements.
 
+# NLP Tokenization 
+**Tokenization** is a fundamental process in natural language processing (NLP) where text is broken down into smaller units called **tokens**. These tokens are often words, but they can also be phrases, sentences, or even characters, depending on the application and the specific approach to tokenization.
+
+### Key Aspects of Tokenization:
+
+1. **Word-Level Tokenization**:
+   - **Definition**: The most common form of tokenization where text is split into individual words or terms.
+   - **Example**: For the sentence "I love NLP!", word-level tokenization would produce the tokens ["I", "love", "NLP", "!"].
+   - **Applications**: Used in tasks like text classification, sentiment analysis, and machine translation.
+
+2. **Subword Tokenization**:
+   - **Definition**: Splits text into subword units or morphemes, which are smaller than words but still carry meaning.
+   - **Example**: For the word "unhappiness", subword tokenization might produce ["un", "happiness"].
+   - **Applications**: Commonly used in models like BERT and GPT, where vocabulary size is reduced by splitting rare words into subwords, improving the model’s ability to handle out-of-vocabulary words.
+
+3. **Character-Level Tokenization**:
+   - **Definition**: The text is broken down into individual characters.
+   - **Example**: For the sentence "I love NLP!", character-level tokenization would produce ["I", " ", "l", "o", "v", "e", " ", "N", "L", "P", "!"].
+   - **Applications**: Useful in tasks that involve languages with complex morphology or where the precise sequence of characters is important, such as in certain types of text generation.
+
+4. **Sentence-Level Tokenization**:
+   - **Definition**: The text is split into individual sentences.
+   - **Example**: For the text "I love NLP! It's fascinating.", sentence-level tokenization would produce ["I love NLP!", "It's fascinating."].
+   - **Applications**: Important for tasks that analyze text at the sentence level, such as machine translation and summarization.
+
+### Importance of Tokenization:
+- **Text Preprocessing**: Tokenization is usually the first step in text preprocessing, transforming raw text into a form that can be analyzed or used by machine learning models.
+- **Feature Extraction**: In NLP, tokens are the features or input units that models use to learn from text data.
+- **Handling Languages**: Tokenization helps in dealing with various languages that have different rules for word boundaries, punctuation, and compound words.
+
+### Challenges in Tokenization:
+- **Ambiguity**: In some languages, determining word boundaries can be difficult due to the lack of clear separators (e.g., Chinese, Japanese).
+- **Special Cases**: Handling contractions, abbreviations, hyphenated words, and punctuation correctly can be challenging.
+- **Multilingual Texts**: Texts that contain multiple languages or scripts may require sophisticated tokenization strategies.
+
+### Example in Code:
+For example, in Python using the popular library **nltk**:
+
+```python
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import word_tokenize
+
+text = "I love NLP!"
+tokens = word_tokenize(text)
+print(tokens)  # Output: ['I', 'love', 'NLP', '!']
+```
+
+In this example, `word_tokenize` is a function that splits the sentence into words and punctuation tokens.
+
+### Summary:
+Tokenization is a crucial step in NLP that breaks down text into manageable units called tokens. It facilitates text analysis and processing, enabling machine learning models to work effectively with textual data.
 
 # Types of Data We are Dealing With
 Here's a table that separates the data types into structured and unstructured categories:
