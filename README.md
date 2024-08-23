@@ -3,6 +3,9 @@
 ## Objective
 Use Natural Language Processing (NLP) techniques to integrate unstructured data (e.g., emails, customer reviews) with structured event logs to enhance process analysis and decision-making.
 
+### Petri Nets 
+A mathematical model for modelling processes and data flow, showing states and so on. 
+
 # Notes
 Data found: from Process mining Website https://www.processmining.org/event-data.html 
 1. Customer purchase order handling process
