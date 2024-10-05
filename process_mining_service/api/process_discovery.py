@@ -31,7 +31,6 @@ def discover_process_using_alpha():
 @process_discovery_bp.route('/heuristics', methods=['POST'])
 def discover_process_using_heuristics():
     data = request.json
-<<<<<<< HEAD
     if 'xes_path' not in data:
         return create_error_response('xes_path not found in request', 400)
     try:
@@ -40,10 +39,4 @@ def discover_process_using_heuristics():
         return jsonify({'heuristics_net': str(heu_net)})
     except Exception as e:
         return create_error_response(f"Error processing heuristics discovery: {str(e)}", 500)
-=======
-    if 'xes_path' not in data:      
-        return jsonify({'error': 'xes_path not found in request'}), 400
-    log = pm4py.read_xes(data['xes_path'])
-    heu_net = pm4py.discover_heuristics_net(log)
-    return jsonify({'heuristics_net': str(heu_net)})
->>>>>>> 49de562 (Updates)
+
