@@ -65,7 +65,7 @@ def analyze_frequency():
         logging.error(f"Error analyzing frequency: {e}")
         return jsonify({'error': 'An error occurred while processing the request'}), 500
 @performance_analysis_bp.route('/resource_utilization', methods=['POST'])
-def analyze_resource_utilization():
+def analyze_resource_utilization(): 
     data = request.json
     if 'xes_path' not in data:
         return jsonify({'error': 'xes_path not found in request'}), 400

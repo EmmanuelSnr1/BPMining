@@ -1,12 +1,15 @@
 from flask import Flask
 from api.process_discovery import process_discovery_bp
 from api.performance_analysis import performance_analysis_bp
+from api.overview import overview_bp  
+
 
 app = Flask(__name__)
 
 # Register Blueprints
 app.register_blueprint(process_discovery_bp, url_prefix='/api/process_discovery')
 app.register_blueprint(performance_analysis_bp, url_prefix='/api/performance_analysis')
+app.register_blueprint(overview_bp, url_prefix='/api/overview')  # Register the overview blueprint
 
 @app.route('/')
 def home():
